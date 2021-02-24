@@ -7,11 +7,14 @@ export const getTodo = /* GraphQL */ `
       id
       owner
       name
-      dueDateTime
       passed
       completed
+      dueDateTime
       description
-      createdAt
+      _version
+      _deleted
+      _lastChangedAt
+      createdOn
       updatedAt
     }
   }
@@ -27,14 +30,50 @@ export const listTodos = /* GraphQL */ `
         id
         owner
         name
-        dueDateTime
         passed
         completed
+        dueDateTime
         description
-        createdAt
+        _version
+        _deleted
+        _lastChangedAt
+        createdOn
         updatedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTodos = /* GraphQL */ `
+  query SyncTodos(
+    $filter: ModelTodoFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTodos(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        owner
+        name
+        passed
+        completed
+        dueDateTime
+        description
+        _version
+        _deleted
+        _lastChangedAt
+        createdOn
+        updatedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;

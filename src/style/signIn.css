@@ -1,4 +1,9 @@
 .signIn {
     width: 50%;
+    color: red;
     align-items: center;
+    --background-color: red;
+}
+.Auth {
+    --background-color: red;
 }

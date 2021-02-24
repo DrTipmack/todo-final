@@ -10,11 +10,14 @@ export const createTodo = /* GraphQL */ `
       id
       owner
       name
-      dueDateTime
       passed
       completed
+      dueDateTime
       description
-      createdAt
+      _version
+      _deleted
+      _lastChangedAt
+      createdOn
       updatedAt
     }
   }
@@ -28,11 +31,14 @@ export const updateTodo = /* GraphQL */ `
       id
       owner
       name
-      dueDateTime
       passed
       completed
+      dueDateTime
       description
-      createdAt
+      _version
+      _deleted
+      _lastChangedAt
+      createdOn
       updatedAt
     }
   }
@@ -46,11 +52,14 @@ export const deleteTodo = /* GraphQL */ `
       id
       owner
       name
-      dueDateTime
       passed
       completed
+      dueDateTime
       description
-      createdAt
+      _version
+      _deleted
+      _lastChangedAt
+      createdOn
       updatedAt
     }
   }

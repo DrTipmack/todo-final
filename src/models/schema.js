@@ -24,24 +24,24 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "dueDateTime": {
-                    "name": "dueDateTime",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "passed": {
                     "name": "passed",
                     "isArray": false,
                     "type": "Boolean",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "completed": {
                     "name": "completed",
                     "isArray": false,
                     "type": "Boolean",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "dueDateTime": {
+                    "name": "dueDateTime",
+                    "isArray": false,
+                    "type": "AWSDateTime",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -58,7 +58,11 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
+                    "properties": {
+                        "timestamps": {
+                            "createdAt": "createdOn"
+                        }
+                    }
                 },
                 {
                     "type": "auth",
